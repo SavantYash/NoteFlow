@@ -1,0 +1,33 @@
+{% extends 'B.html' %}
+{% block start %}
+<div class="container card mt-5 w-50 p-3 shadow-lg rounded">
+    {% if messages %}
+    <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">First Name :</label>
+        <input required name="First_Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Last Name :</label>
+            <input required name="Last_Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">User Name :</label>
+            <input required name="User_Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input required name="Password" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <p>Already have Account? <a href="/login/">Login</a></p>
+        <p style="text-align: center;" class="mt-4">
+            <button type="submit" class="btn btn-primary">Register</button></p>
+    </form>
+</div>
+{% endblock %}
