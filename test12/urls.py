@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path
 from Notes import views 
 from ParkEasy import views as pe
-from FunGrow import views as fg
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
@@ -40,4 +39,4 @@ FunnGro = [
     path('FunnGro/Teen',fg.home)
 ]
 
-urlpatterns = urlpatterns + Notes + ParkEasy + FunnGro;
+urlpatterns = urlpatterns + Notes + ParkEasy ;
